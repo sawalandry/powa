@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { footer } from '../../data/Data';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './footer.css';
 
 const Footer = () => {
+
+  useEffect(() => {
+    AOS.init()
+  }, [])
+  
+
+
+
   return (
     <>
       <section className="footerContact">
-        <div className="container">
+        <div className="container" data-aos='fade-up' data-aos-delay='100'>
           <div className="send flex">
             <div className="text">
               <h1>Do You Have Question ?</h1>
@@ -18,7 +28,7 @@ const Footer = () => {
       </section>
 
       <footer>
-        <div className="container">
+        <div className="container" data-aos='fade-up' data-aos-delay='100'>
           <div className="box">
             <div className="logo">
               {/* <img src="" alt="" /> */}
@@ -50,7 +60,7 @@ const Footer = () => {
         </div>
       </footer>
       <div className="legal">
-        <span>© 2022 Mars. Designed By <a href="/">Sawajr.</a></span>
+        <span>© 2022 Mars. Designed By <a href="https://sawajr.netlify.app">Sawajr.</a></span>
       </div>
     </>
   )

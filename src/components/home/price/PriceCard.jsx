@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { price } from '../../data/Data';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const PriceCard = () => {
+
+  useEffect(() => {
+    AOS.init()
+  }, []);
+  
   return (
     <div>
       <div className="content flex mtop">
         {
           price.map((item, index) => (
-            <div className="box shadow" key={index}>
+            <div className="box shadow" key={index} data-aos='fade-up' data-aos-delay='100'>
               <div className="topbtn">
                 <button className="btn3">{item.best}</button>
               </div>

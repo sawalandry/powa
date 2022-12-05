@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Heading from '../../common/Heading';
 import './team.css';
 import imag from "../../../images/customer/team-1.jpg";
@@ -7,6 +7,8 @@ import imag2 from "../../../images/customer/team-4.jpg";
 import imag3 from "../../../images/customer/team-2.jpg";
 import imag4 from "../../../images/customer/team-5.jpg";
 import imag5 from "../../../images/customer/team-3.jpg";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const teamData = [
@@ -54,6 +56,11 @@ const teamData = [
   },
 ]
 const Team = () => {
+
+  useEffect(() => {
+    AOS.init()
+  }, [])
+  
   return (
     <>
       <div className="team background">
@@ -65,7 +72,7 @@ const Team = () => {
           <div className="content rescol mtop grid3">
             {
               teamData.map((val, index) => (
-                <div className="box" key={index}>
+                <div className="box" key={index} data-aos='fade-up' data-aos-delay='100'>
                   <button className="btn3">
                     {val.list} Listing
                   </button>

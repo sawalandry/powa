@@ -3,7 +3,7 @@ import React from 'react'
 const Back = ({ name, title, cover }) => {
   return (
     <div>
-      <div className="back">
+      <div className="back"  data-aos='fade-up'>
         <div className="container">
           <span>{name}</span>
           <h1>{title}</h1>

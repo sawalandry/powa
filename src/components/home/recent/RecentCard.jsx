@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import imag from '../../../images/list/p-1.png'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const listData = [
   {
@@ -59,14 +61,19 @@ const listData = [
 ]
 
 const RecentCard = () => {
+
+  useEffect(() => {
+    AOS.init()
+  }, []);
+  
   return (
     <>
-      <div className="content grid3 mtop">
+      <div className="content grid3 mtop" data-aos="fade-up" data-aos-delay='100'>
         {
           listData.map((val, index) => {
             const { cover, category, location, name, price, type } = val
             return (
-              <div className="bax shadow" key={index}>
+              <div className="bax shadow" key={index}  data-aos='fade-up' data-aos-delay='100'>
                 <div className="img">
                   <img src={cover} alt={name} />
                 </div>

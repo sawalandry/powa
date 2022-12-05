@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './award.css';
 import Heading from '../../common/Heading';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const awardsData = [
@@ -28,6 +30,12 @@ const awardsData = [
 
 
 const Award = () => {
+
+  useEffect(() => {
+    AOS.init()
+  }, []);
+  
+
   return (
     <>
       <section className="awards padding">
@@ -35,10 +43,10 @@ const Award = () => {
           <Heading title='Over 1M Happy Users Being With Us Still They Love Our Services.'
             subtitle='Our Award.'
           />
-          <div className="content grid4 mtop">
+          <div className="content grid4 mtop" data-aos='fade-up' data-aos-delay='100'>
             {
               awardsData.map((val, index) => (
-                <div className="box" key={index}>
+                <div className="box" key={index} data-aos='fade-up' data-aos-delay='100'>
                   <div className="icon">
                     <span>{val.icon}</span>
                   </div>

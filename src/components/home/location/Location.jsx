@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Heading from '../../common/Heading';
 import './location.css';
 import Item from '../../../images/location/city-1.png';
@@ -7,6 +7,8 @@ import Item2 from '../../../images/location/city-6.png';
 import Item3 from '../../../images/location/city-2.png';
 import Item4 from '../../../images/location/city-5.png';
 import Item5 from '../../../images/location/city-3.png';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const locationData = [
   {
@@ -60,10 +62,15 @@ const locationData = [
 ]
 
 const Location = () => {
+
+  useEffect(() => {
+    AOS.init()
+  }, []);
+  
   return (
     <>
       <section className="location padding">
-        <div className="container">
+        <div className="container" data-aos='fade-up' data-aos-delay='100'>
           <Heading title='Explore By Location' 
             subtitle='Lorem ipsum dolor sit amet, 
               consectetur adipiscing elit, 
@@ -74,15 +81,17 @@ const Location = () => {
           <div className="content grid3 mtop">
             {
               locationData.map((item, index) => (
-                <div className="box" key={index}>
+                <div className="box" key={index} data-aos='fade-up' data-aos-delay='100'>
                   <img src={item.cover} alt={item.name} />
                   <div className="overlay">
-                    <h5>{item.name}</h5>
-                    <p>
-                      <label>{item.Villas}</label>
-                      <label>{item.Offices}</label>
-                      <label>{item.Apartments}</label>
-                    </p>
+                    <div className="overlay-info">
+                      <h5>{item.name}</h5>
+                      <p>
+                        <label>{item.Villas}</label>
+                        <label>{item.Offices}</label>
+                        <label>{item.Apartments}</label>
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))

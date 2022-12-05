@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './header.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import { nav } from '../../data/Data';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
-  const [navList, setNavList] = useState(false);
+  
+  const Header = () => {
+    useEffect(() => {
+      AOS.init();
+    
+    }, []);
+    const [navList, setNavList] = useState(false);
+
   return (
-
-
-
     <>
       <header>
-        <div className="container flex">
+        <div className="container flex" data-aos='fade-up' data-aos-delay='100'>
           <div className="logo">
             {/* <img src="" alt="" srcset="Our Logo" /> */}
             <h1><a href="/">Mars.H</a></h1>

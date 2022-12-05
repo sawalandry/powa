@@ -8,7 +8,9 @@ import Team from './team/Team';
 import Price from './price/Price';
 
 
+
 const Home = () => {
+
   return (
     <div>
       <Hero />

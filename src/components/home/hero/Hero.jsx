@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Heading from '../../common/Heading';
 import './hero.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Hero = () => {
+  
+    useEffect(() => {
+      AOS.init();
+    
+    }, [])
+
   return (
     <>
       <section className="hero">
-        <div className="container">
+        <div className="container" data-aos="fade-up" data-aos-delay='100'>
           <Heading title='Search Your Next Home' subtitle='Find new & featured property located in your local city.'/>
 
-          <div className='form'>
+          <div className='form' data-aos="zoom-in-down" data-aos-delay='100'>
             <div className="box">
               <span>City/Street</span>
               <input type="text" placeholder='Location' />
@@ -35,4 +43,5 @@ const Hero = () => {
   )
 }
 
-export default Hero
+
+export default Hero;

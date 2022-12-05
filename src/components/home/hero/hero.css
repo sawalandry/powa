@@ -9,6 +9,7 @@
 
 .hero .container {
     padding-top: 15%;
+    transition: .4s ease-in-out;
 }
 
 .hero h1 {

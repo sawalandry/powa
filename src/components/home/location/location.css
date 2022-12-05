@@ -1,32 +1,34 @@
 .location .box {
     position: relative;
     border-radius: 5px;
+    margin-bottom: 20px;
+    overflow: hidden;
 }
 
 .location img {
     border-radius: 5px;
 }
 .location .box .overlay {
-    display: none;
-    transition: 0.3s ease-in-out;
-}
-
-/* .location .box:hover .overlay {
+    opacity: 0;
     position: absolute;
+    bottom: 0;
     top: 0;
     left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 250px;
-    width: 100%;
-    color: #fff;
-    z-index: 222;
-} */
+    right: 0;
+    transition: 0.2s;
+}
 
-/* .location .overlay::after {
-    content: '';
+.box .overlay-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    margin: 0px 10px;
+    transition: bottom 0.4s;
+}
+
+.overlay-info h5 {
+    /* content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -34,25 +36,62 @@
     height: 210px;
     background: rgb(15 28 47 / 30%);
     z-index: -1;
-    margin: 20px;
-    border-radius: 5px;
-} */
+    border-radius: 5px; */
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    width: 340px;
+    height: 210px;
+    font-weight: 500; */
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    font-size: 18px;
+    color: #fff;
+}
 
-.location h5 {
+.box:hover .overlay {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.8) 20%, rgba(0, 212, 255, 0) 100%);
+    opacity: 1;
+    transition: 0.4s;
+}
+.box:hover .overlay-info {
+    bottom: 60px;
+    transition: bottom 0.4s;
+}
+
+/* .location .overlay  h5 {
     font-size: 18px;
     font-weight: 500;
-}
+} */
 
-.location label {
+.overlay-info label {
     color: #fff;
-    margin-right: 20px;
-    opacity: 0.8;
+}
+.overlay-info p{
+    display: flex;
+    flex-direction: column;
+    font-style: italic;
+    color: #fff;
+    font-size: 13px;
 }
 
-@media screen and (max-width: 800) {
+.box:hover label {
+    bottom: 0;
+    transition: bottom ease-in-out 0.4s;
+    color: #fff;
+}
+
+@media screen and (max-width: 800px) {
     
-    .location .overlay {
-        
-        display: none;
+    .location .content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .location .content .box {
+        width: 100%;
     }
 }
