@@ -8,13 +8,14 @@ import { Link } from 'react-router-dom';
 
   
   const Header = () => {
+    const [navList, setNavList] = useState(false);
+    
     useEffect(() => {
       AOS.init();
     
     }, []);
-    const [navList, setNavList] = useState(false);
-
-  return (
+    
+    return (
     <>
       <header>
         <div className="container flex" data-aos='fade-up' data-aos-delay='100'>
